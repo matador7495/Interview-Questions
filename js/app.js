@@ -3,12 +3,24 @@ import { fetchData } from "../utils/httpReq.js";
 const questionContainer = document.getElementById("question-container");
 const paginationContainer = document.querySelector(".pagination");
 const searchInput = document.getElementById("search-input");
+const alertText = document.querySelector(".alert-text");
 
 const questionsPerPage = 5; // تعداد سوالات در هر صفحه
 let currentPage = 1; // صفحه فعلی
 let questionsData;
 
 const e2p = (s) => s.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+
+const showAlert = (message) => {
+  let tempText = alertText.innerText;
+  alertText.style.background = "#c62828";
+  alertText.style.color = "#fff";
+  alertText.innerText = message;
+  setTimeout(() => {
+    alertText.innerText = tempText;
+    alertText.style = "";
+  }, 3000);
+};
 
 const fetchDataAndRender = async () => {
   questionsData = await fetchData();
@@ -86,12 +98,19 @@ const searchQuestions = (event) => {
   const searchInputValue = searchInput.value.trim().toLowerCase();
 
   if (searchInputValue.length < 3) {
+    showAlert("لطفاً حداقل ۳ حرف برای جستجو وارد کنید.");
     fetchDataAndRender(); // دوباره بازیابی داده‌ها و نمایش آن‌ها
     return;
   }
 
   currentPage = 1; // بازنشانی صفحه فعلی به صفحه اول
   const matchedQuestions = questionsData.filter((question) => question.title.toLowerCase().includes(searchInputValue));
+
+  if (matchedQuestions.length === 0) {
+    showAlert("سوالی با این عنوان یافت نشد.");
+    return;
+  }
+
   render(matchedQuestions); // نمایش سوالات یافته شده
 };
 
@@ -99,6 +118,14 @@ const initHandler = async () => {
   await fetchDataAndRender();
   const searchForm = document.getElementById("search-form");
   searchForm.addEventListener("submit", searchQuestions);
+
+  // اضافه کردن event listener برای تغییرات در input جستجو
+  searchInput.addEventListener("input", () => {
+    if (searchInput.value.trim() === "") {
+      // اگر input خالی شود، دوباره تمام سوالات را نمایش بده
+      fetchDataAndRender();
+    }
+  });
 };
 
 document.addEventListener("DOMContentLoaded", initHandler);

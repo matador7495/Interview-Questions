@@ -173,6 +173,20 @@ pre {
   background-color: #0056b3; /* رنگ هاور دکمه */
   border-color: #0056b3; /* رنگ حاشیه دکمه هنگام هاور */
 }
-#search-btn i{
+#search-btn i {
   font-size: 1.1rem;
+}
+#alert {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.alert-text {
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: #ffdd57;
+  color: #333;
 }
