@@ -121,3 +121,25 @@ pre {
   direction: ltr;
   white-space: pre-line;
 }
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+.pagination button {
+  background-color: var(--primary-color); /* رنگ پیشفرض */
+  color: var(--background-color); /* رنگ متن پیشفرض */
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.pagination button:hover {
+  background-color: var(--secondary-color); /* رنگ هاور دکمه */
+  color: var(--text-color); /* رنگ متن هاور */
+}
+.page-btn.active {
+  background-color: var(--accent-color); /* رنگ انتخاب شده */
+  color: var(--background-color); /* رنگ متن انتخاب شده */
+}
