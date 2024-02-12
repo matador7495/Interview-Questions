@@ -1,0 +1,123 @@
+/* تعریف پالت رنگی */
+:root {
+  --primary-color: #06224a; /* رنگ اصلی */
+  --secondary-color: #dcdcdc; /* رنگ فرعی 1 */
+  --accent-color: #c1436d; /* رنگ فرعی 2 */
+  --background-color: #ffffff; /* رنگ پس زمینه */
+  --text-color: #0f0c24; /* رنگ متن */
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Vazirmatn, Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: var(--background-color); /* رنگ پس زمینه بدنه سایت */
+  color: var(--text-color); /* رنگ متن */
+}
+header {
+  background-color: var(--primary-color); /* رنگ پس زمینه هدر */
+  padding: 10px; /* فاصله از بالا و پایین هدر */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه هدر */
+  text-align: center; /* متن وسط چین شود */
+}
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: var(--background-color); /* رنگ پس زمینه محتوا */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه محتوا */
+}
+h1 {
+  font-size: 32px; /* اندازه فونت هدر */
+  color: var(--background-color); /* رنگ متن عنوان */
+}
+p {
+  text-align: justify;
+  line-height: 2;
+}
+strong {
+  font-weight: bold;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+/* استایل برای سوالات */
+.question {
+  background-color: var(--secondary-color); /* رنگ پس زمینه سوال */
+  padding: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 10px; /* گوشه‌های گرد */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه کادر */
+  transition: box-shadow 0.3s ease; /* انیمیشن تغییر سایه */
+}
+.question:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* سایه هنگام هاور */
+}
+/* استایل برای عنوان سوالات */
+.question h3 {
+  font-size: 1.3rem; /* اندازه فونت */
+  margin-bottom: 10px; /* فاصله از پایین */
+  padding: 10px 20px; /* پدینگ */
+  background-color: var(--accent-color); /* رنگ پس‌زمینه */
+  color: var(--background-color); /* رنگ متن */
+  border-radius: 5px; /* گوشه‌های گرد */
+  transition: background-color 0.3s ease; /* انیمیشن تغییر رنگ */
+  position: relative;
+}
+/* استایل برای جواب‌ها */
+.answer {
+  display: none; /* مخفی کردن جواب‌ها به طور پیشفرض */
+  background-color: #f9f9f9; /* رنگ پس زمینه */
+  padding: 20px; /* پدینگ داخلی */
+  border-radius: 5px; /* گوشه‌های گرد */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه */
+  margin-top: 10px; /* فاصله بالایی */
+  transition: box-shadow 0.3s ease; /* انیمیشن تغییر سایه */
+}
+.answer.show {
+  display: block; /* نمایش جواب‌ها در صورت کلیک بر روی سوال */
+}
+.answer:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* سایه هنگام هاور */
+}
+/* استایل برای آیکون */
+.toggle-icon {
+  cursor: pointer;
+  transition: transform 0.6s ease; /* افزودن انیمیشن به آیکون */
+  font-size: 1.5rem; /* تغییر اندازه آیکون */
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+}
+.toggle-icon.rotate {
+  /* تغییر استایل آیکون در صورت باز شدن یا بسته شدن */
+  transform: rotate(180deg);
+}
+pre {
+  font-family: Consolas, monospace; /* یک فونت مناسب برای کد */
+  font-size: 14px; /* اندازه فونت */
+  background-color: #f0f0f0; /* رنگ پس‌زمینه */
+  color: #333; /* رنگ متن */
+  padding: 15px; /* فاصله داخلی */
+  margin: 20px 0;
+  border-radius: 5px; /* گوشه‌های گرد */
+  text-align: left;
+  direction: ltr;
+  white-space: pre-line;
+}
