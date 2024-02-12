@@ -2,17 +2,23 @@ import { fetchData } from "../utils/httpReq.js";
 
 const questionContainer = document.getElementById("question-container");
 const paginationContainer = document.querySelector(".pagination");
+const searchInput = document.getElementById("search-input");
 
 const questionsPerPage = 5; // تعداد سوالات در هر صفحه
 let currentPage = 1; // صفحه فعلی
+let questionsData;
 
 const e2p = (s) => s.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
 
-const render = async () => {
-  const questionsData = await fetchData();
+const fetchDataAndRender = async () => {
+  questionsData = await fetchData();
+  render(questionsData);
+};
+
+const render = (questions) => {
   const startIndex = (currentPage - 1) * questionsPerPage;
   const endIndex = startIndex + questionsPerPage;
-  const questionsToShow = questionsData.slice(startIndex, endIndex);
+  const questionsToShow = questions.slice(startIndex, endIndex);
 
   questionContainer.innerHTML = ""; // پاک کردن محتوای قبلی
 
@@ -28,7 +34,7 @@ const render = async () => {
     questionContainer.innerHTML += questionHTML;
   });
 
-  renderPagination(questionsData.length);
+  renderPagination(questions.length);
   addClickHandlers(); // اضافه کردن event listener به سوالات
 };
 
@@ -47,7 +53,7 @@ const renderPagination = (totalQuestions) => {
   pageButtons.forEach((button) => {
     button.addEventListener("click", () => {
       currentPage = parseInt(button.dataset.page);
-      render();
+      fetchDataAndRender(); // دوباره بازیابی داده‌ها و نمایش آن‌ها
     });
   });
 };
@@ -75,8 +81,24 @@ const addClickHandlers = () => {
   });
 };
 
+const searchQuestions = (event) => {
+  event.preventDefault();
+  const searchInputValue = searchInput.value.trim().toLowerCase();
+
+  if (searchInputValue.length < 3) {
+    fetchDataAndRender(); // دوباره بازیابی داده‌ها و نمایش آن‌ها
+    return;
+  }
+
+  currentPage = 1; // بازنشانی صفحه فعلی به صفحه اول
+  const matchedQuestions = questionsData.filter((question) => question.title.toLowerCase().includes(searchInputValue));
+  render(matchedQuestions); // نمایش سوالات یافته شده
+};
+
 const initHandler = async () => {
-  await render();
+  await fetchDataAndRender();
+  const searchForm = document.getElementById("search-form");
+  searchForm.addEventListener("submit", searchQuestions);
 };
 
 document.addEventListener("DOMContentLoaded", initHandler);

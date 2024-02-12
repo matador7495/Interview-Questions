@@ -143,3 +143,36 @@ pre {
   background-color: var(--accent-color); /* رنگ انتخاب شده */
   color: var(--background-color); /* رنگ متن انتخاب شده */
 }
+#search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* اضافه کردن ترازبندی عمودی */
+  margin-bottom: 20px;
+}
+#search-input {
+  width: 300px;
+  padding: 8px;
+  margin-left: 10px; /* فاصله به طرف دکمه */
+  border: 2px solid #0056b3; /* رنگ border جذاب */
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+#search-input::placeholder {
+  color: var(--primary-color);
+}
+#search-btn {
+  background-color: #007bff; /* رنگ پس‌زمینه دکمه */
+  color: #fff; /* رنگ متن دکمه */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه دکمه */
+  border-radius: 5px; /* گوشه‌های گرد دکمه */
+  padding: 10px 20px; /* فاصله داخلی دکمه */
+  cursor: pointer;
+}
+#search-btn:hover {
+  background-color: #0056b3; /* رنگ هاور دکمه */
+  border-color: #0056b3; /* رنگ حاشیه دکمه هنگام هاور */
+}
+#search-btn i{
+  font-size: 1.1rem;
+}
