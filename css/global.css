@@ -6,24 +6,12 @@
   --background-color: #ffffff; /* رنگ پس زمینه */
   --text-color: #0f0c24; /* رنگ متن */
 }
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("../fonts/Vazirmatn-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("../fonts/Vazirmatn-Bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: Vazirmatn, Arial, Helvetica, sans-serif;
+  font-family: Vazirmatn, sans-serif;
 }
 body {
   background-color: var(--background-color); /* رنگ پس زمینه بدنه سایت */
@@ -189,4 +177,25 @@ pre {
   padding: 5px;
   background-color: #ffdd57;
   color: #333;
+}
+footer {
+  background-color: #06224a;
+  color: #ffffff;
+  padding: 20px;
+}
+footer p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 10px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: justify;
+}
+footer a {
+  color: #ffdd57;
+}
+@media (max-width: 600px) {
+  * {
+    font-size: 0.9rem;
+  }
 }
