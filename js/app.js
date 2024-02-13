@@ -5,7 +5,7 @@ const paginationContainer = document.querySelector(".pagination");
 const searchInput = document.getElementById("search-input");
 const alertText = document.querySelector(".alert-text");
 
-const questionsPerPage = 5; // تعداد سوالات در هر صفحه
+const questionsPerPage = 10; // تعداد سوالات در هر صفحه
 let currentPage = 1; // صفحه فعلی
 let questionsData;
 
@@ -37,9 +37,9 @@ const render = (questions) => {
   questionsToShow.forEach((question) => {
     const questionHTML = `
     <div class="question">
-        <h3>${e2p(question.title)} <i class="fas fa-arrow-alt-circle-down toggle-icon"></i></h3>
+        <h2>${e2p(question.title)} <i class="fas fa-arrow-alt-circle-down toggle-icon"></i></h2>
         <div class="answer">
-            <p>${question.answer}</p>
+            ${question.answer}
         </div>
     </div>
     `;
@@ -75,7 +75,7 @@ const addClickHandlers = () => {
   const allQuestions = document.querySelectorAll(".question");
   allQuestions.forEach((question) => {
     question.addEventListener("click", (event) => {
-      if (event.target.tagName === "H3" || event.target.tagName === "I") {
+      if (event.target.tagName === "H2" || event.target.tagName === "I") {
         const answer = question.querySelector(".answer");
         const allAnswers = document.querySelectorAll(".answer");
         allAnswers.forEach((ans) => {

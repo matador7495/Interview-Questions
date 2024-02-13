@@ -16,6 +16,7 @@
 body {
   background-color: var(--background-color); /* رنگ پس زمینه بدنه سایت */
   color: var(--text-color); /* رنگ متن */
+  font-size: 16px;
 }
 header {
   background-color: var(--primary-color); /* رنگ پس زمینه هدر */
@@ -32,23 +33,27 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه محتوا */
 }
 h1 {
-  font-size: 32px; /* اندازه فونت هدر */
+  font-size: 2rem; /* اندازه فونت هدر */
   color: var(--background-color); /* رنگ متن عنوان */
-}
-p {
-  text-align: justify;
-  line-height: 2;
 }
 strong {
   font-weight: bold;
   color: var(--accent-color);
   font-size: 1.2rem;
 }
+span {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+small {
+  font-size: 1rem;
+  color: #0056b3;
+}
 /* استایل برای سوالات */
 .question {
   background-color: var(--secondary-color); /* رنگ پس زمینه سوال */
-  padding: 20px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
   cursor: pointer;
   border-radius: 10px; /* گوشه‌های گرد */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه کادر */
@@ -58,9 +63,8 @@ strong {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* سایه هنگام هاور */
 }
 /* استایل برای عنوان سوالات */
-.question h3 {
+.question h2 {
   font-size: 1.3rem; /* اندازه فونت */
-  margin-bottom: 10px; /* فاصله از پایین */
   padding: 10px 20px; /* پدینگ */
   background-color: var(--accent-color); /* رنگ پس‌زمینه */
   color: var(--background-color); /* رنگ متن */
@@ -78,6 +82,10 @@ strong {
   margin-top: 10px; /* فاصله بالایی */
   transition: box-shadow 0.3s ease; /* انیمیشن تغییر سایه */
 }
+.answer p {
+  text-align: justify;
+  line-height: 2;
+}
 .answer.show {
   display: block; /* نمایش جواب‌ها در صورت کلیک بر روی سوال */
 }
@@ -91,15 +99,16 @@ strong {
   font-size: 1.5rem; /* تغییر اندازه آیکون */
   position: absolute;
   left: 10px;
-  bottom: 15px;
+  bottom: 25%;
 }
 .toggle-icon.rotate {
   /* تغییر استایل آیکون در صورت باز شدن یا بسته شدن */
   transform: rotate(180deg);
 }
-pre {
+.answer code {
+  display: block;
   font-family: Consolas, monospace; /* یک فونت مناسب برای کد */
-  font-size: 14px; /* اندازه فونت */
+  font-size: 0.8rem; /* اندازه فونت */
   background-color: #f0f0f0; /* رنگ پس‌زمینه */
   color: #333; /* رنگ متن */
   padding: 15px; /* فاصله داخلی */
@@ -107,7 +116,7 @@ pre {
   border-radius: 5px; /* گوشه‌های گرد */
   text-align: left;
   direction: ltr;
-  white-space: pre-line;
+  line-height: 3;
 }
 .pagination {
   text-align: center;
@@ -122,6 +131,7 @@ pre {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.1rem;
 }
 .pagination button:hover {
   background-color: var(--secondary-color); /* رنگ هاور دکمه */
@@ -143,7 +153,7 @@ pre {
   margin-left: 10px; /* فاصله به طرف دکمه */
   border: 2px solid #0056b3; /* رنگ border جذاب */
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1.1rem;
   outline: none;
 }
 #search-input::placeholder {
@@ -177,6 +187,7 @@ pre {
   padding: 5px;
   background-color: #ffdd57;
   color: #333;
+  line-height: 2;
 }
 footer {
   background-color: #06224a;
@@ -184,9 +195,7 @@ footer {
   padding: 20px;
 }
 footer p {
-  font-size: 1rem;
   line-height: 1.8;
-  margin: 10px 0;
   max-width: 1200px;
   margin: 0 auto;
   text-align: justify;
@@ -195,7 +204,53 @@ footer a {
   color: #ffdd57;
 }
 @media (max-width: 600px) {
-  * {
+  h1 {
+    font-size: 1.8rem;
+  }
+  main {
+    padding: 10px;
+  }
+  .question h2 {
+    font-size: 1rem;
+  }
+  p,
+  strong,
+  span,
+  small {
     font-size: 0.9rem;
+  }
+  .answer code {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .question h2,
+  .pagination button,
+  .alert-text,
+  #search-input,
+  #search-btn i {
+    font-size: 0.8rem;
+  }
+  p,
+  strong,
+  span,
+  small {
+    font-size: 0.7rem;
+  }
+  .answer {
+    padding: 10px;
+  }
+  .answer code {
+    padding: 8px;
+  }
+  .toggle-icon {
+    left: 5px;
+    font-size: 1.1rem;
+  }
+  .question h2 {
+    padding: 10px 5px;
   }
 }
