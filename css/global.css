@@ -54,7 +54,6 @@ small {
   background-color: var(--secondary-color); /* رنگ پس زمینه سوال */
   padding: 10px;
   margin-bottom: 15px;
-  cursor: pointer;
   border-radius: 10px; /* گوشه‌های گرد */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه کادر */
   transition: box-shadow 0.3s ease; /* انیمیشن تغییر سایه */
@@ -71,6 +70,7 @@ small {
   border-radius: 5px; /* گوشه‌های گرد */
   transition: background-color 0.3s ease; /* انیمیشن تغییر رنگ */
   position: relative;
+  cursor: pointer;
 }
 /* استایل برای جواب‌ها */
 .answer {
