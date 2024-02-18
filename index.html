@@ -1,48 +1,53 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>سوالات مصاحبه جاوااسکریپت</title>
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <!-- استفاده از فونت‌ها و آیکون‌ها از طریق CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+    <!-- اتصال به فایل CSS -->
     <link rel="stylesheet" href="./css/global.css" />
   </head>
   <body>
     <header>
+      <!-- عنوان سربرگ -->
       <h1>سوالات مصاحبه جاوااسکریپت</h1>
     </header>
     <main>
-      <div id="alert">
-        <p class="alert-text">آخرین بروزرسانی : 1402/11/29</p>
-      </div>
+      <div id="alert-text">آخرین بروزرسانی : ۱۴۰۲/۱۱/۲۹</div>
+      <!-- فرم جستجو -->
       <form id="search-form">
         <input type="text" id="search-input" placeholder="جستجو بر اساس عنوان سوال ..." />
         <button type="submit" id="search-btn"><i class="fas fa-search"></i></button>
       </form>
+      <!-- نمایش سوالات -->
       <div id="question-container"></div>
-      <!-- دکمه‌های بعدی و قبلی -->
+      <!-- نمایش صفحه‌بندی -->
       <div class="pagination"></div>
     </main>
     <footer>
       <p>
+        <!-- متن پاورقی -->
         تمامی حقوق مادی و معنوی این وبسایت متعلق به
         <a href="https://github.com/matador7495" target="_blank" rel="noopener noreferrer">Mr. Nobody</a> است. این وبسایت با هدف آمادگی افراد برای
         مصاحبه‌های شغلی طراحی شده است. این وبسایت با استفاده از هوش مصنوعی
         <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a> توسعه یافته و محتوای آن نیز توسط هوش مصنوعی تولید شده
         است. لطفاً توجه داشته باشید که ممکن است این محتوا دارای اشتباهات یا نقص‌هایی باشد. برای ارتباط با ما، می‌توانید پیام خود را به آدرس ایمیل
         id4acc2014@protonmail.com ارسال کنید. اگر از این وبسایت لذت برده‌اید، لطفاً آن را
-        <a href="https://github.com/matador7495/Interview-Questions" target="_blank" rel="noopener noreferrer">
-          در گیت‌هاب <i class="fab fa-github"></i
+        <a href="https://github.com/matador7495/Interview-Questions" target="_blank" rel="noopener noreferrer"
+          >در گیت‌هاب <i class="fab fa-github"></i
         ></a>
         با دادن یک ستاره <i class="fas fa-star"></i> حمایت کنید.
       </p>
     </footer>
+    <!-- اتصال به فایل JavaScript -->
     <script src="./js/app.js" type="module"></script>
   </body>
 </html>

@@ -1,6 +1,12 @@
 const fetchData = async () => {
-  const res = await fetch("questions.json");
-  const json = await res.json();
-  return json;
+  try {
+    const response = await fetch("questions.json");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
 };
-export { fetchData };
+
+export default fetchData;

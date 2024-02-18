@@ -1,11 +1,12 @@
 /* تعریف پالت رنگی */
 :root {
-  --primary-color: #06224a; /* رنگ اصلی */
-  --secondary-color: #dcdcdc; /* رنگ فرعی 1 */
-  --accent-color: #c1436d; /* رنگ فرعی 2 */
-  --background-color: #ffffff; /* رنگ پس زمینه */
-  --text-color: #0f0c24; /* رنگ متن */
+  --primary-color: #06224a;
+  --secondary-color: #dcdcdc;
+  --accent-color: #c1436d;
+  --background-color: #ffffff;
+  --text-color: #0f0c24;
 }
+/* تنظیمات کلی برای تمام المان‌ها */
 * {
   margin: 0;
   padding: 0;
@@ -13,118 +14,131 @@
   text-decoration: none;
   font-family: Vazirmatn, sans-serif;
 }
+/* استایل بدنه صفحه */
 body {
-  background-color: var(--background-color); /* رنگ پس زمینه بدنه سایت */
-  color: var(--text-color); /* رنگ متن */
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-size: 16px;
 }
+/* استایل سربرگ */
 header {
-  background-color: var(--primary-color); /* رنگ پس زمینه هدر */
-  padding: 10px; /* فاصله از بالا و پایین هدر */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه هدر */
-  text-align: center; /* متن وسط چین شود */
+  background-color: var(--primary-color);
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
+/* استایل محتوا اصلی */
 main {
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
-  background-color: var(--background-color); /* رنگ پس زمینه محتوا */
+  background-color: var(--background-color);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه محتوا */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* استایل عنوان اصلی */
 h1 {
-  font-size: 2rem; /* اندازه فونت هدر */
-  color: var(--background-color); /* رنگ متن عنوان */
+  font-size: 2rem;
+  color: var(--background-color);
 }
+/* استایل عناصر برجسته */
 strong {
   font-weight: bold;
   color: var(--accent-color);
   font-size: 1.2rem;
 }
+/* استایل متن‌های ویژه */
 span {
   color: var(--accent-color);
   font-size: 1.1rem;
 }
+/* استایل متن‌های کوچک */
 small {
   font-size: 1rem;
   color: #0056b3;
 }
-/* استایل برای سوالات */
+/* استایل سوالات */
 .question {
-  background-color: var(--secondary-color); /* رنگ پس زمینه سوال */
+  background-color: var(--secondary-color);
   padding: 10px;
   margin-bottom: 15px;
-  border-radius: 10px; /* گوشه‌های گرد */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه کادر */
-  transition: box-shadow 0.3s ease; /* انیمیشن تغییر سایه */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
+/* افزودن انیمیشن به سوالات هنگام هاور */
 .question:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* سایه هنگام هاور */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-/* استایل برای عنوان سوالات */
+/* استایل عنوان سوالات */
 .question h2 {
-  font-size: 1.3rem; /* اندازه فونت */
-  padding: 10px 20px; /* پدینگ */
-  background-color: var(--accent-color); /* رنگ پس‌زمینه */
-  color: var(--background-color); /* رنگ متن */
-  border-radius: 5px; /* گوشه‌های گرد */
-  transition: background-color 0.3s ease; /* انیمیشن تغییر رنگ */
+  font-size: 1.3rem;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
   position: relative;
   cursor: pointer;
 }
-/* استایل برای جواب‌ها */
+/* استایل پاسخ‌ها */
 .answer {
-  display: none; /* مخفی کردن جواب‌ها به طور پیشفرض */
-  background-color: #f9f9f9; /* رنگ پس زمینه */
-  padding: 20px; /* پدینگ داخلی */
-  border-radius: 5px; /* گوشه‌های گرد */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه */
-  margin-top: 10px; /* فاصله بالایی */
-  transition: box-shadow 0.3s ease; /* انیمیشن تغییر سایه */
+  display: none;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  transition: box-shadow 0.3s ease;
 }
 .answer p {
   text-align: justify;
   line-height: 2;
 }
+/* نمایش جواب‌ها هنگام کلیک */
 .answer.show {
-  display: block; /* نمایش جواب‌ها در صورت کلیک بر روی سوال */
+  display: block;
 }
+/* افزودن انیمیشن به جواب‌ها هنگام هاور */
 .answer:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* سایه هنگام هاور */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-/* استایل برای آیکون */
+/* استایل آیکون تاگل */
 .toggle-icon {
   cursor: pointer;
-  transition: transform 0.6s ease; /* افزودن انیمیشن به آیکون */
-  font-size: 1.5rem; /* تغییر اندازه آیکون */
+  transition: transform 0.6s ease;
+  font-size: 1.5rem;
   position: absolute;
   left: 10px;
   bottom: 25%;
 }
+/* چرخش آیکون */
 .toggle-icon.rotate {
-  /* تغییر استایل آیکون در صورت باز شدن یا بسته شدن */
   transform: rotate(180deg);
 }
+/* استایل کد */
 .answer code {
   display: block;
-  font-family: Consolas, monospace; /* یک فونت مناسب برای کد */
-  font-size: 0.8rem; /* اندازه فونت */
-  background-color: #f0f0f0; /* رنگ پس‌زمینه */
-  color: #333; /* رنگ متن */
-  padding: 15px; /* فاصله داخلی */
+  font-family: Consolas, monospace;
+  font-size: 0.8rem;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 15px;
   margin: 20px 0;
-  border-radius: 5px; /* گوشه‌های گرد */
+  border-radius: 5px;
   text-align: left;
   direction: ltr;
   line-height: 3;
 }
+/* استایل صفحه‌بندی */
 .pagination {
   text-align: center;
   margin-top: 20px;
 }
+/* استایل دکمه‌های صفحه‌بندی */
 .pagination button {
-  background-color: var(--primary-color); /* رنگ پیشفرض */
-  color: var(--background-color); /* رنگ متن پیشفرض */
+  background-color: var(--primary-color);
+  color: var(--background-color);
   border: none;
   padding: 10px 20px;
   margin: 0 5px;
@@ -134,25 +148,28 @@ small {
   font-size: 1.1rem;
   margin: 5px;
 }
+/* افزودن انیمیشن به دکمه‌های صفحه‌بندی هنگام هاور */
 .pagination button:hover {
-  background-color: var(--secondary-color); /* رنگ هاور دکمه */
-  color: var(--text-color); /* رنگ متن هاور */
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 .page-btn.active {
-  background-color: var(--accent-color); /* رنگ انتخاب شده */
-  color: var(--background-color); /* رنگ متن انتخاب شده */
+  background-color: var(--accent-color);
+  color: var(--background-color);
 }
+/* استایل فرم جستجو */
 #search-form {
   display: flex;
   justify-content: center;
-  align-items: center; /* اضافه کردن ترازبندی عمودی */
+  align-items: center;
   margin-bottom: 20px;
 }
+/* استایل ورودی جستجو */
 #search-input {
   width: 300px;
   padding: 8px;
-  margin-left: 10px; /* فاصله به طرف دکمه */
-  border: 2px solid #0056b3; /* رنگ border جذاب */
+  margin-left: 10px;
+  border: 2px solid #0056b3;
   border-radius: 5px;
   font-size: 1.1rem;
   outline: none;
@@ -160,50 +177,52 @@ small {
 #search-input::placeholder {
   color: var(--primary-color);
 }
+/* استایل دکمه جستجو */
 #search-btn {
-  background-color: #007bff; /* رنگ پس‌زمینه دکمه */
-  color: #fff; /* رنگ متن دکمه */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* سایه دکمه */
-  border-radius: 5px; /* گوشه‌های گرد دکمه */
-  padding: 10px 20px; /* فاصله داخلی دکمه */
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
 }
+/* افزودن انیمیشن به دکمه جستجو هنگام هاور */
 #search-btn:hover {
-  background-color: #0056b3; /* رنگ هاور دکمه */
-  border-color: #0056b3; /* رنگ حاشیه دکمه هنگام هاور */
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
+/* استایل آیکون جستجو */
 #search-btn i {
   font-size: 1.1rem;
 }
-#alert {
-  height: 30px;
-  display: flex;
-  align-items: center;
+/* استایل پیام هشدار */
+#alert-text {
   margin-bottom: 20px;
-}
-.alert-text {
   width: 100%;
   text-align: center;
   border-radius: 4px;
   padding: 5px;
   background-color: #ffdd57;
   color: #333;
-  line-height: 2;
 }
+/* استایل فوتر */
 footer {
   background-color: #06224a;
   color: #ffffff;
   padding: 20px;
 }
+/* استایل متن فوتر */
 footer p {
   line-height: 1.8;
   max-width: 1200px;
   margin: 0 auto;
   text-align: justify;
 }
+/* استایل پیوندها در فوتر */
 footer a {
   color: #ffdd57;
 }
+/* استایل Responsive */
 @media (max-width: 600px) {
   h1 {
     font-size: 1.8rem;
@@ -230,7 +249,7 @@ footer a {
   }
   .question h2,
   .pagination button,
-  .alert-text,
+  #alert-text,
   #search-input,
   #search-btn i {
     font-size: 0.8rem;
