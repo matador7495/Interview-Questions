@@ -132,6 +132,7 @@ small {
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1.1rem;
+  margin: 5px;
 }
 .pagination button:hover {
   background-color: var(--secondary-color); /* رنگ هاور دکمه */
